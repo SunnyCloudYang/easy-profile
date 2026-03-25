@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" data-theme="{{theme}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+
+    {{#each meta}}
+    <meta name="{{name}}" content="{{content}}">
+    {{/each}}
+
+    <link rel="stylesheet" href="assets/css/theme-default.css">
+    <link rel="stylesheet" href="assets/css/theme-midnight.css">
+    <link rel="stylesheet" href="assets/css/theme-ocean.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {{#each stylesheets}}
+    <link rel="stylesheet" href="{{.}}">
+    {{/each}}
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="container">
+                <nav class="app-nav" aria-label="Main navigation">
+                    <a href="#/" class="nav-brand">{{site.title}}</a>
+                    <button type="button" class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                        <span class="nav-burger-bar"></span>
+                        <span class="nav-burger-bar"></span>
+                        <span class="nav-burger-bar"></span>
+                    </button>
+                    <ul class="nav-links" id="nav-menu" role="menu">
+                        {{#each navigation}}
+                        <li role="none">
+                            <a href="#{{url}}" class="nav-link{{#if active}} active{{/if}}" role="menuitem">{{label}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <button class="theme-toggle" onclick="App.toggleTheme()" aria-label="Toggle theme" title="Switch theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <div class="container">
+                {{content}}
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="container">
+                <p>{{site.footer}}</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/core/parser.js"></script>
+    <script src="assets/js/core/loader.js"></script>
+    <script src="assets/js/core/renderer.js"></script>
+    <script src="assets/js/core/router.js"></script>
+    <script src="assets/js/utils/dom.js"></script>
+    <script src="assets/js/utils/markdown.js"></script>
+    <script src="assets/js/extensions/registry.js"></script>
+    <script src="assets/js/extensions/extension-manager.js"></script>
+    <script src="assets/js/core/app.js"></script>
+
+    {{#each scripts}}
+    <script src="{{.}}"></script>
+    {{/each}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            App.init().catch(error => {
+                console.error('Failed to initialize app:', error);
+            });
+        });
+    </script>
+</body>
+</html>

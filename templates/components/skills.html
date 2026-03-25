@@ -1,0 +1,214 @@
+<section class="section skills-section" id="{{id}}">
+    {{#if title}}
+    <h2 class="section-title">{{title}}</h2>
+    {{/if}}
+
+    {{#if description}}
+    <p class="skills-description">{{description}}</p>
+    {{/if}}
+
+    {{#if groups}}
+    {{#each groups}}
+    <div class="skills-group">
+        {{#if name}}
+        <h3 class="skills-group-title">{{name}}</h3>
+        {{/if}}
+        <div class="skills-grid {{gridClass}}">
+            {{#each skills}}
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">{{name}}</span>
+                    {{#if level}}
+                    <span class="skill-level">{{level}}%</span>
+                    {{/if}}
+                </div>
+                {{#if level}}
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: {{level}}%"></div>
+                </div>
+                {{/if}}
+                {{#if description}}
+                <p class="skill-description">{{description}}</p>
+                {{/if}}
+                {{#if tags}}
+                <div class="tags mt-1">
+                    {{#each tags}}
+                    <span class="tag">{{.}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{#if items}}
+    {{#if useGroups}}
+    {{#each items}}
+    <div class="skills-group">
+        <h3 class="skills-group-title">{{name}}</h3>
+        <div class="skills-grid {{../gridClass}}">
+            {{#each skills}}
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">{{name}}</span>
+                    {{#if level}}
+                    <span class="skill-level">{{level}}%</span>
+                    {{/if}}
+                </div>
+                {{#if level}}
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: {{level}}%"></div>
+                </div>
+                {{/if}}
+                {{#if tags}}
+                <div class="tags mt-1">
+                    {{#each tags}}
+                    <span class="tag">{{.}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <div class="skills-grid grid-{{gridColumns}}">
+        {{#each items}}
+        <div class="skill-item">
+            <div class="skill-header">
+                <span class="skill-name">{{name}}</span>
+                {{#if level}}
+                <span class="skill-level">{{level}}%</span>
+                {{/if}}
+            </div>
+            {{#if level}}
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: {{level}}%"></div>
+            </div>
+            {{/if}}
+            {{#if description}}
+            <p class="skill-description">{{description}}</p>
+            {{/if}}
+            {{#if tags}}
+            <div class="tags mt-1">
+                {{#each tags}}
+                <span class="tag">{{.}}</span>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{/if}}
+</section>
+
+<style>
+.skills-description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 600px;
+}
+
+.skills-group {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.skills-group:last-child {
+    margin-bottom: 0;
+}
+
+.skills-group-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-border);
+    display: inline-block;
+}
+
+.skills-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.skills-grid.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.skills-grid.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.skills-grid.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.skills-grid.grid-auto { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+@media (max-width: 900px) {
+    .skills-grid.grid-4,
+    .skills-grid.grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid.grid-4,
+    .skills-grid.grid-3,
+    .skills-grid.grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skill-item {
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.skill-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.08);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-name {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.skill-level {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}
+
+.skill-bar {
+    height: 8px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--border-radius-full);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+    text-align: left;
+}
+</style>

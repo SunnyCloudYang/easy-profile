@@ -1,0 +1,27 @@
+<section class="section hero" id="{{id}}">
+    <div class="hero-content text-center">
+        {{#if title}}
+        <h1 class="hero-title">{{title}}</h1>
+        {{/if}}
+
+        {{#if subtitle}}
+        <p class="hero-subtitle">{{subtitle}}</p>
+        {{/if}}
+
+        {{#if social}}
+        <div class="social-links mb-4">
+            {{#each social}}
+            <a href="{{url}}" class="social-link" target="_blank" rel="noopener" aria-label="{{label}}">
+                {{icon}}
+            </a>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if content}}
+        <div class="hero-description">
+        {{content}}
+        </div>
+        {{/if}}
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="section" id="{{id}}">
+    {{#if title}}
+    <h2 class="section-title">{{title}}</h2>
+    {{/if}}
+
+    <div class="timeline">
+        {{#each items}}
+        <div class="timeline-item">
+            <div class="timeline-date">{{date}}</div>
+            {{#if title}}
+            <h3>{{title}}</h3>
+            {{/if}}
+            {{#if subtitle}}
+            <p class="text-secondary">{{subtitle}}</p>
+            {{/if}}
+            {{#if description}}
+            <p>{{description}}</p>
+            {{/if}}
+            {{#if tags}}
+            <div class="tags mt-1">
+                {{#each tags}}
+                <span class="tag">{{.}}</span>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,292 @@
+<article class="project-page section">
+    <header class="project-header">
+        <div class="project-nav-back">
+            <a href="#/projects" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+        <div class="project-title-row">
+            <h1 class="project-title">{{title}}</h1>
+            {{#if status}}
+            <span class="project-status status-{{status}}">{{status}}</span>
+            {{/if}}
+        </div>
+        {{#if subtitle}}
+        <p class="project-subtitle">{{subtitle}}</p>
+        {{/if}}
+        {{#if date}}
+        <p class="project-date">{{date}}</p>
+        {{/if}}
+    </header>
+
+    {{#if image}}
+    <div class="project-hero-image">
+        <img src="{{image}}" alt="{{title}} screenshot" loading="lazy">
+    </div>
+    {{/if}}
+
+    <div class="project-meta-row">
+        {{#if tags}}
+        <div class="tags">
+            {{#each tags}}
+            <span class="tag">{{.}}</span>
+            {{/each}}
+        </div>
+        {{/if}}
+        {{#if link}}
+        <a href="{{link}}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-solid fa-external-link-alt"></i> View Project
+        </a>
+        {{/if}}
+        {{#if github}}
+        <a href="{{github}}" class="btn btn-secondary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> Source Code
+        </a>
+        {{/if}}
+    </div>
+
+    <div class="project-content">
+        {{content}}
+    </div>
+
+    {{#if features}}
+    <section class="project-features">
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            {{#each features}}
+            <li>{{.}}</li>
+            {{/each}}
+        </ul>
+    </section>
+    {{/if}}
+
+    {{#if challenges}}
+    <section class="project-challenges">
+        <h2>Challenges & Solutions</h2>
+        <div class="challenge-list">
+            {{#each challenges}}
+            <div class="challenge-item">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+
+    {{#if related}}
+    <section class="project-related">
+        <h2>Related Projects</h2>
+        <div class="grid grid-2">
+            {{#each related}}
+            <div class="card">
+                <h3 class="card-title">{{title}}</h3>
+                <p>{{description}}</p>
+                <a href="{{link}}" class="btn btn-secondary mt-2">View Details</a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+</article>
+
+<style>
+.project-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-nav-back {
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: 0;
+    display: inline;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-active {
+    background: rgba(5, 150, 105, 0.15);
+    color: var(--color-secondary);
+    border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+.status-completed {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.status-archived {
+    background: rgba(107, 114, 128, 0.1);
+    color: var(--color-text-muted);
+    border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.project-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-secondary);
+    font-family: var(--font-family-heading);
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.project-hero-image {
+    margin: var(--spacing-2xl) 0;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-hero-image img {
+    width: 100%;
+    display: block;
+}
+
+.project-meta-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-content {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.project-content h2 {
+    font-size: var(--font-size-2xl);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-content h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-content p {
+    margin-bottom: var(--spacing-lg);
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.project-content ul,
+.project-content ol {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.project-content li {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+}
+
+.project-content strong {
+    color: var(--color-text-primary);
+}
+
+.project-features,
+.project-challenges,
+.project-related {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.project-features h2,
+.project-challenges h2,
+.project-related h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.feature-list li::before {
+    content: '✓';
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+}
+
+.challenge-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.challenge-item {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+}
+
+.challenge-item h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.challenge-item p {
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+@media (max-width: 640px) {
+    .project-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .project-meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>

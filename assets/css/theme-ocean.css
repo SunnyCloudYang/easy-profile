@@ -1,0 +1,57 @@
+/**
+ * Theme: Ocean — Clean teal/ocean blue theme
+ * A fresh, clean theme inspired by deep ocean waters
+ */
+
+:root,
+[data-theme="ocean"] {
+    /* Colors - Ocean Blue Palette */
+    --color-primary: #0891b2;       /* Cyan 600 — ocean blue */
+    --color-primary-dark: #0e7490;  /* Cyan 700 */
+    --color-secondary: #14b8a6;      /* Teal 500 */
+    --color-accent: #f97316;         /* Orange accent for CTAs */
+
+    /* Background colors */
+    --color-bg-primary: #f0f9ff;     /* Sky 50 — light airy blue */
+    --color-bg-secondary: #e0f2fe;   /* Sky 100 */
+    --color-bg-tertiary: #bae6fd;    /* Sky 200 */
+
+    /* Text colors */
+    --color-text-primary: #0c4a6e;   /* Sky 900 — deep ocean */
+    --color-text-secondary: #0369a1; /* Sky 700 */
+    --color-text-muted: #7dd3fc;     /* Sky 300 */
+
+    /* Border colors */
+    --color-border: #bae6fd;
+    --color-border-light: #e0f2fe;
+
+    /* Shadows with blue tint */
+    --shadow-sm: 0 1px 2px 0 rgba(8, 145, 178, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(8, 145, 178, 0.08), 0 2px 4px -1px rgba(8, 145, 178, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.08), 0 4px 6px -2px rgba(8, 145, 178, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(8, 145, 178, 0.08), 0 10px 10px -5px rgba(8, 145, 178, 0.04);
+}
+
+/* Ocean dark variant — deep ocean at night */
+[data-theme="ocean-dark"] {
+    --color-primary: #22d3ee;       /* Cyan 400 */
+    --color-primary-dark: #0891b2;   /* Cyan 600 */
+    --color-secondary: #2dd4bf;       /* Teal 400 */
+    --color-accent: #fb923c;          /* Orange 400 */
+
+    --color-bg-primary: #042f2e;     /* Teal 950 */
+    --color-bg-secondary: #134e4a;   /* Teal 900 */
+    --color-bg-tertiary: #115e59;    /* Teal 800 */
+
+    --color-text-primary: #ccfbf1;   /* Teal 50 */
+    --color-text-secondary: #5eead4; /* Teal 300 */
+    --color-text-muted: #14b8a6;      /* Teal 500 */
+
+    --color-border: #134e4a;
+    --color-border-light: #042f2e;
+
+    --shadow-sm: 0 1px 2px 0 rgba(34, 211, 238, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(34, 211, 238, 0.08), 0 2px 4px -1px rgba(34, 211, 238, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(34, 211, 238, 0.08), 0 4px 6px -2px rgba(34, 211, 238, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(34, 211, 238, 0.08), 0 10px 10px -5px rgba(34, 211, 238, 0.04);
+}

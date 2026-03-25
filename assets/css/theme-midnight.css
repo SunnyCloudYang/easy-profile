@@ -1,0 +1,41 @@
+/**
+ * Theme: Midnight — Deep purple/violet dark theme
+ * A bold, expressive dark theme with rich violet accents
+ */
+
+:root,
+[data-theme="midnight"] {
+    /* Colors - Midnight Purple Palette */
+    --color-primary: #a78bfa;       /* Soft violet */
+    --color-primary-dark: #7c3aed;  /* Deep violet */
+    --color-secondary: #f472b6;      /* Pink accent */
+    --color-accent: #fb7185;         /* Rose accent */
+
+    /* Background colors */
+    --color-bg-primary: #0c0a1d;     /* Deep midnight */
+    --color-bg-secondary: #1e1535;   /* Dark purple */
+    --color-bg-tertiary: #2d2448;    /* Mid purple */
+
+    /* Text colors */
+    --color-text-primary: #f5f3ff;   /* Near white violet */
+    --color-text-secondary: #c4b5fd; /* Soft violet text */
+    --color-text-muted: #7c3aed;     /* Muted violet */
+
+    /* Border colors */
+    --color-border: #2d2448;
+    --color-border-light: #1e1535;
+
+    /* Shadows with purple tint */
+    --shadow-sm: 0 1px 2px 0 rgba(167, 139, 250, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(167, 139, 250, 0.1), 0 2px 4px -1px rgba(167, 139, 250, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(167, 139, 250, 0.1), 0 4px 6px -2px rgba(167, 139, 250, 0.06);
+    --shadow-xl: 0 20px 25px -5px rgba(167, 139, 250, 0.1), 0 10px 10px -5px rgba(167, 139, 250, 0.06);
+
+    /* Skill bar gradient for midnight theme */
+    --skill-gradient: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+/* Dark variant of midnight (same as midnight — it's inherently dark) */
+[data-theme="midnight"] {
+    /* Uses the same values above */
+}

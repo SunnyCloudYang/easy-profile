@@ -1,0 +1,93 @@
+# Personal Profile Configuration
+
+site:
+  title: "Your Name"
+  description: "Personal profile and portfolio"
+  author: "Your Name"
+  lang: "en"
+  footer: "© 2026 Your Name. All rights reserved."
+
+
+# Home page configuration
+home:
+  title: "Your Name - Personal Profile"
+  description: "Welcome to my personal profile"
+  hero:
+    title: "Hello! I'm Your Name"
+    subtitle: "Full-Stack Developer"
+    enableSocial: true
+    # Social links
+    social:
+      - label: GitHub
+        url: https://github.com/yourusername
+        icon: "<i class='fa-brands fa-github'></i>"
+      - label: LinkedIn
+        url: https://linkedin.com/in/yourusername
+        icon: "<i class='fa-brands fa-linkedin'></i>"
+      - label: Twitter
+        url: https://twitter.com/yourusername
+        icon: "<i class='fa-brands fa-twitter'></i>"
+      - label: Email
+        url: mailto:your@email.com
+        icon: "<i class='fa-solid fa-envelope'></i>"
+  sections:
+    - hero
+    - about
+    - experience
+    - projects
+    - skills
+    - contact
+
+# Additional pages
+pages:
+  /about:
+    label: "About"
+    title: "About Me"
+    description: "Learn more about me"
+    content: "content/pages/about.md"
+    showInNav: true
+
+  /projects:
+    label: "Projects"
+    title: "My Projects"
+    description: "Explore my work"
+    content: "content/pages/projects.md"
+    showInNav: true
+
+  /blog:
+    label: "Blog"
+    title: "Blog"
+    description: "My thoughts and articles"
+    sections:
+      - blog-posts
+    showInNav: true
+
+  /contact:
+    label: "Contact"
+    title: "Contact Me"
+    description: "Get in touch"
+    content: "content/pages/contact.md"
+    showInNav: true
+
+# Extensions (optional)
+extensions:
+  analytics:
+    enabled: false
+    url: "extensions/analytics.js"
+
+# SEO configuration
+seo:
+  ogImage: "assets/images/og-image.jpg"
+  twitterCard: "summary_large_image"
+  twitterSite: "@yourusername"
+
+# Theme configuration
+# Available themes: light (warm ivory), midnight (deep purple), ocean (teal blue), ocean-dark (deep ocean)
+theme:
+  default: "light"
+  enableToggle: true
+
+# Development settings
+development:
+  cache: true
+  debug: false

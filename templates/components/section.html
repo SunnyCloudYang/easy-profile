@@ -1,0 +1,39 @@
+<section class="section" id="{{id}}">
+    {{#if title}}
+    <h2 class="section-title">{{title}}</h2>
+    {{/if}}
+
+    {{content}}
+
+    {{#if items}}
+    <div class="grid grid-{{gridColumns}}">
+        {{#each items}}
+        <div class="card">
+            {{#if title}}
+            <h3 class="card-title">{{title}}</h3>
+            {{/if}}
+
+            {{#if subtitle}}
+            <p class="card-subtitle">{{subtitle}}</p>
+            {{/if}}
+
+            {{#if description}}
+            <p>{{description}}</p>
+            {{/if}}
+
+            {{#if tags}}
+            <div class="tags">
+                {{#each tags}}
+                <span class="tag">{{.}}</span>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if link}}
+            <a href="{{link}}" class="btn btn-primary mt-2">View Details</a>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</section>
